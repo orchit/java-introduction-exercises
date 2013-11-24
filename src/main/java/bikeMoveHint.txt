@@ -1,0 +1,17 @@
+    public void move() {
+        //first get the direction the bike is moving in
+        double directionX = Math.cos(Math.toRadians(direction));
+        double directionY = Math.sin(Math.toRadians(direction));
+
+        //normalize the vector
+        double length = Math.sqrt(directionX * directionX + directionY * directionY);
+        if (length > 0) {
+            directionX = directionX * (1 / length);
+            directionY = directionY * (1 / length);
+        }
+        //verify that the direction vector is normalized
+        //assert (Math.abs(Math.sqrt(directionX * directionX + directionY * directionY) - 1) < 0.001);
+
+        posX += directionX * speed;
+        posY += directionY * speed;
+    }
