@@ -55,6 +55,10 @@ public class Bike {
         //verify that the direction vector is normalized
         //assert (Math.abs(Math.sqrt(directionX * directionX + directionY * directionY) - 1) < 0.001);
 
+        applyMovement(directionX, directionY);
+    }
+
+    protected void applyMovement(double directionX, double directionY) {
         posX += directionX * speed;
         posY += directionY * speed;
     }

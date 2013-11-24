@@ -19,4 +19,9 @@ public class MountainBike extends Bike{
     public void setSeatHeight(int seatHeight) {
         this.seatHeight = seatHeight;
     }
+
+    @Override
+    protected void applyMovement(double directionX, double directionY) {
+        super.applyMovement(directionX*gear, directionY*gear);
+    }
 }
